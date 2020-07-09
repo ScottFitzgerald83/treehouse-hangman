@@ -3,16 +3,12 @@ package com.hangman;
 public class Hangman {
 
     public static void main(String[] args) {
-        // Your incredible code goes here...
+        // Start a game of hangman
         Game game = new Game("treehouse");
         Prompter prompter = new Prompter(game);
-        prompter.displayProgress();
-        boolean isHit = prompter.promptForGuess();
-        if (isHit) {
-            System.out.println("We got a hit!");
-        } else {
-            System.out.println("Oops, missed");
+        while (game.getRemainingTries() > 0) {
+            prompter.displayProgress();
+            prompter.promptForGuess();
         }
-        prompter.displayProgress();
     }
 }
