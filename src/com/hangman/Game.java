@@ -21,4 +21,15 @@ class Game {
         return isHit;
     }
 
+    public String getCurrentProgress() {
+        StringBuilder progress = new StringBuilder();
+        for (char letter : answer.toCharArray()) {
+            char display = '_';
+            if (hits.indexOf(letter) != -1) {
+                display = letter;
+            }
+            progress.append(display);
+        }
+        return progress.toString();
+    }
 }
